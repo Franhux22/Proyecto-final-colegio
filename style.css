@@ -1,0 +1,88 @@
+:root{
+    --color-fondo: #243642 !important;
+    --color-banner: linear-gradient(to bottom, #070f2b 0%, #0c134f 100%);
+    --texto-banner: "Inter", sans-serif;
+    --tamaño-texto-banner: 16px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: var(--color-fondo);
+}
+
+
+/*BANNER */
+
+.header{
+    background: var(--color-banner);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    padding: 5px 0px;
+    font-family: var(--texto-banner);
+}
+
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 60px;
+    width: auto;
+    transition: all 0.3;
+    padding: 0px 40px;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+/*FIN BANNER*/  
+
+
+
+/*IMAGENES CARRUSEL*/
+.slider{
+    height: 75vh;
+    width: auto;
+    border: solid red;
+}
+
+/*FIN CARRUSEL*/
+
+/*GRANDES FRANQUICIAS*/
+ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.marvel .img-marvel{
+    height: 134.984px;
+    width: 282.672px; 
+    object-fit: cover;
+    border-radius: 17%;
+}
+
+.jurassic .img-jurassic{
+    height: 134.984px;
+    width: 282.672px;
+    border-radius: 17%;
+}
+
+.star-wars{
+    height: 134.984px;
+    width: 282.672px;
+}
+/*FIN GRANDES FRANQUICIAS*/
+
+
+.taquillera{
+    margin-top: 25px;
+}
