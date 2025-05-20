@@ -67,23 +67,74 @@
     </nav>
   </header>
 
-  <!--FIN BANNER #a6a6a6-->
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <!--FIN BANNER-->
   <!--CARRUSEL IMAGANES-->
-  <div class="slider">
 
+  <div class="carousel">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <img src="/imagenes banner/avengersendgame.jpeg" alt="Imagen 1">
+      <div class="info-box">
+        <h2>Avengers: end game</h2>
+        <p class="description">
+          Después de los eventos devastadores de Avengers: Infinity War, el universo está en ruinas debido a las acciones de...
+        </p>
+        <div class="year">2019</div>
+        <div class="genres">Acción, Aventura, Fantasía, Marvel</div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="slide top-aligned">
+      <img src="/imagenes banner/Jhon Wick 4.jpg" alt="Imagen 2">
+      <div class="info-box">
+        <h2>John Wick: 4</h2>
+        <p class="description">
+          El asesino a sueldo John Wick (Keanu Reeves) ha vuelto desde el inframundo para poder llevar a cabo su venganza...
+        </p>
+        <div class="year">2023</div>
+        <div class="genres">Acción, Suspenso</div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="/imagenes banner/deadpool-3.jpg" alt="Imagen 3">
+      <div class="info-box">
+        <h2>Deadpool y Wolverine</h2>
+        <p class="description">
+          Wade Wilson intenta llevar una vida normal, dejando atrás sus días como el mercenario Deadpool con su flexible...
+        </p>
+        <div class="year">2024</div>
+        <div class="genres">Acción, Aventura, Ciencia Ficción, Comedia, Fantasía</div>
+      </div>
+    </div>
   </div>
+  <script>
+    // Selecciona todos los slides
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Función para pasar al siguiente slide
+    function showNextSlide() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % totalSlides;
+      slides[currentIndex].classList.add('active');
+    }
+
+    // Cambio automático cada 5 segundos (5000 milisegundos)
+    setInterval(showNextSlide, 5000);
+  </script>
   <!--FIN CARRUSEL-->
+
 
   <!--GRANDES FRANQUICIAS-->
   <section class="franquicias mx-4 my-5">
     <h2 style="color: white;">Grandes Franquicias</h2>
     <div class="franqui my-5">
       <ul>
-        <li><button class="marvel"><img src="imagenes franquicias/Marvel.jpeg" alt="marvel imagen" class="img-marvel"></button></li>
-        <li><button class="jurassic"><img src="imagenes franquicias/Jurassic-World.jpeg" alt="jurassic imagen" class="img-jurassic"></button></li>
-        <li><button class="star-wars"></button></li>
+        <li><button class="marvel" style="border-radius: 17%; border: none;"><img src="imagenes franquicias/Marvel.jpeg" alt="marvel imagen" class="img-marvel"></button></li>
+        <li><button class="jurassic" style="border-radius: 17%; border: none;"><img src="imagenes franquicias/Jurassic-World.jpeg" alt="jurassic imagen" class="img-jurassic"></button></li>
+        <li><button class="star-wars" style="border-radius: 17%; border: none;"><img src="imagenes franquicias/starwars.jpg" alt="" class="img-star"></button></li>
       </ul>
     </div>
   </section>
