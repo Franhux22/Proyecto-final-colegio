@@ -97,23 +97,26 @@ body {
     display: flex;
     justify-content: space-between;
     height: 361.625px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .contenedor {
     position: relative;
     display: inline-block;
+    height: 240.922px;
+    width: 193.359px;
 }
 
-.extration2, .vuelta, .john, .kong, .xxx, .geostorm, .bad, .greenland, .equipaje, .alerta, .simios, .nadie, .rampage, .trecientos, .agente, .simios {
-    width: 172.359px;
-    height: 217.922px;
+.extration2, .vuelta, .john, .kong, .xxx, .geostorm, .bad, .greenland, .equipaje, .alerta, .simios, .nadie, .rampage, .trecientos, .agente{
+    width: 193.359px;
+    height: 240.922px;
     object-fit: cover;
     border-radius: 5%;
 }
 
 .nombre {
-    position: absolute;
+      position: absolute;
+    bottom: 0; /* Esto posicionará el texto en la parte inferior de la imagen */
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -123,6 +126,8 @@ body {
     font-weight: bold;
     background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
     padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 10px;
 }
 
 main{
