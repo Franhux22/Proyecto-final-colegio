@@ -92,23 +92,6 @@ body {
     height: 361.625px;
     margin-bottom: 30px;
 }
-/*
-.contenedor{
-    position: relative;
-    display: inline-block;
-}
-.accion{
-    width: 302.531px;
-    height: 356px;
-    object-fit: cover;
-}
-.texto{
-    border: solid red;
-    width: 302.531px;
-    text-align: center;
-    align-content: end;
-    color: white;
-}*/
 
 .contenedor {
     position: relative;

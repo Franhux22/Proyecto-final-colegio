@@ -84,6 +84,7 @@ body {
     height: 50px;
     width: 100px;
 }
+
 .categoria {
     margin-top: 50px;
     margin-left: 110px;
@@ -95,22 +96,39 @@ body {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    height: 217.922px;
+    height: 361.625px;
     margin-bottom: 30px;
 }
 
-.texto {
-    border: solid red;
+.contenedor {
+    position: relative;
+    display: inline-block;
+}
+
+.extration2, .vuelta, .john, .kong, .xxx, .geostorm, .bad, .greenland, .equipaje, .alerta, .simios, .nadie, .rampage, .trecientos, .agente, .simios {
     width: 172.359px;
+    height: 217.922px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.nombre {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     text-align: center;
-    align-content: end;
-    padding-bottom: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    padding: 5px;
 }
 
 main{
     margin-bottom: 80px;
 }
-/*FIN TARJETAS Y TITULO*/
+/*FIN TARJETAS Y TITULO width: 172.359; height: 217.922;*/
 
 /*FOTTER REDES*/
 
