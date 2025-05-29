@@ -15,7 +15,7 @@
 }
 
 body {
-    background: var(--color-fondo);
+    background: var(--color-fondo)
 }
 
 /*BANNER */
@@ -27,6 +27,8 @@ body {
     height: 55px;
     padding: 5px 0px;
     font-family: var(--texto-banner);
+    position: relative;
+    z-index: 10;
 }
 
 .header .logo {
@@ -63,70 +65,61 @@ body {
     text-decoration: none;
     color: white;
 }
-
 /*FIN BANNER*/
 
-/*TITULO GENEROS*/
-.titu {
+/*TITULO*/
+
+h1{
+    padding-left: 90px;
+    padding-top: 90px;
+    font-size: 40px;
     font-family: var(--texto-titulo);
     color: white;
-    margin-top: 50px;
-    font-size: 45px;
-    margin-left: 105px;
-    padding-left: 35px;
-    width: 80%;
-    border-bottom: solid white;
 }
 
-.categoria {
-    margin-top: 50px;
-    margin-left: 110px;
-    width: 81.5%;
-    align-items: center;
+/*FIN TITULO*/
+
+/*TEXTO E IMAGEN*/
+
+.imagen{
+    background-image: url(imagenfondo.jpg);
+    height: 79vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 150px;
 }
 
-.pr1, .pr2, .pr3 {
-    list-style: none;
+
+.contenedor{
     display: flex;
-    justify-content: space-between;
-    height: 361.625px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-.contenedor {
-    position: relative;
-    display: inline-block;
+.hux{
+    width: 350px;
+    padding-left: 150px;
+    padding-top: 60px;
+    padding-right: 50px;
 }
 
-.accion, .aventura, .comedia, .drama, .terror, .ficcion, .animacion, .romance, .fantasia {
-    width: 302.531px;
-    height: 356px;
-    object-fit: cover;
-    border-radius: 5%;
+.texto{
+    padding-top: 60px;
 }
 
-.texto {
-    position: absolute;
-    bottom: 10px; /* Ajusta la posición del texto */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    text-align: center;
+.texto, .tets{
     color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
-    padding: 5px;
+    font-size: 22px;
+    text-align: justify;
+    font-family: var(--texto-titulo);
 }
 
-main{
-    margin-bottom: 80px;
+.info{
+    width: 45%;
 }
 
-/*FIN TITULO GENEROS*/
 
-
-/*FOTTER REDES*/
+/*FIN TEXTO E IMAGEN*/
 
 footer {
     height: 250px;
@@ -141,7 +134,7 @@ footer {
     width: 70%;
 }
 
-.imagen {
+.logotipo {
     height: auto;
     width: 30%;
     color: white;
@@ -187,7 +180,7 @@ footer {
     display: flex;
 }
 
-.info li{
+.infor li{
     margin-left: 160px;
     list-style: none;
     font-size: var(--tamaño-texto-fotter);
@@ -221,5 +214,3 @@ footer {
     height: 100px;
     font-family: "Open Sans", sans-serif;
 }
-
-/*FIN FOTTER REDES*/
