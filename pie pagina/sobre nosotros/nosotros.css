@@ -6,7 +6,7 @@
     --texto-titulo: "Noto Sans JP", sans-serif;
     --tamaño-texto-fotter: 22px; 
     --color-fondo-fotter: #231f20;
-    --Franhux-Movies: "Roboto", sans-serif;
+    --Franhux-Movies: "Bebas Neue", sans-serif;
 }
 
 * {
@@ -81,13 +81,32 @@ h1{
 
 /*TEXTO E IMAGEN*/
 
-.imagen{
-    background-image: url(imagenfondo.jpg);
+.imagen-fondo{
+    background-image: url(./imagenfondo.jpg) !important; 
     height: 79vh;
     width: 100%;
     background-size: cover;
     background-position: center;
     margin-bottom: 150px;
+}
+
+.imagen-fondo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 89.5%;
+    background-color: rgba(0, 0, 0, 0.6); /* Ajusta la opacidad con el valor alfa */
+    z-index: 1;
+}
+
+/* Asegurar que el contenido esté sobre la capa de opacidad */
+.imagen-fondo h1,
+.imagen-fondo .contenedor {
+    position: relative;
+    z-index: 2;
+    color: white; /* Ajusta el color si es necesario */
 }
 
 

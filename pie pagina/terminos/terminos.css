@@ -15,7 +15,7 @@
 }
 
 body {
-    background: var(--color-fondo);
+    background: var(--color-fondo)
 }
 
 /*BANNER */
@@ -27,6 +27,8 @@ body {
     height: 55px;
     padding: 5px 0px;
     font-family: var(--texto-banner);
+    position: relative;
+    z-index: 10;
 }
 
 .header .logo {
@@ -66,67 +68,67 @@ body {
 
 /*FIN BANNER*/
 
-/*TITULO GENEROS*/
-.titu {
+/*TITULO*/
+
+h1{
+    padding-left: 90px;
+    padding-top: 90px;
+    font-size: 40px;
     font-family: var(--texto-titulo);
     color: white;
-    margin-top: 50px;
-    font-size: 45px;
-    margin-left: 105px;
-    padding-left: 35px;
-    width: 80%;
-    border-bottom: solid white;
+    margin-bottom: 65px;
 }
 
-.categoria {
-    margin-top: 50px;
-    margin-left: 110px;
-    width: 81.5%;
-    align-items: center;
+/*FIN TITULO*/
+
+/*IMAGEN DE FONDO*/
+.imagen-fondo{
+    background-image: url(terminos.jpg) !important; 
+    height: 79vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 320px;
 }
 
-.pr1, .pr2, .pr3 {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    height: 361.625px;
-    margin-bottom: 30px;
-}
 
-.contenedor {
-    position: relative;
-    display: inline-block;
-}
-
-.accion, .aventura, .comedia, .drama, .terror, .ficcion, .animacion, .romance, .fantasia {
-    width: 302.531px;
-    height: 356px;
-    object-fit: cover;
-    border-radius: 5%;
-}
-
-.texto {
+.imagen-fondo::before {
+    content: "";
     position: absolute;
-    bottom: 10px; /* Ajusta la posición del texto */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 89.5%;
+    background-color: rgba(0, 0, 0, 0.6); /* Ajusta la opacidad con el valor alfa */
+    z-index: 1;
+}
+
+.imagen-fondo h1, .imagen-fondo .info {
+    position: relative;
+    z-index: 2; /* Asegura que el texto sea visible */
     color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
-    padding: 5px;
 }
 
-main{
-    margin-bottom: 80px;
+
+.info{
+    width: 90%;
+    height: 80%;
+    position: relative;
+    left: 5%;
+    right: 5%;
+    font-size: 22px;
+    font-family: var(--texto-titulo);
+    text-align: justify;
 }
 
-/*FIN TITULO GENEROS*/
+.lista{
+    padding-left: 35px;
+}
+li{
+    padding: 2px;
+}
 
-
-/*FOTTER REDES*/
+/*FIN TEXTO E IMAGEN*/
 
 footer {
     height: 250px;
@@ -141,7 +143,7 @@ footer {
     width: 70%;
 }
 
-.imagen {
+.logotipo {
     height: auto;
     width: 30%;
     color: white;
@@ -187,7 +189,7 @@ footer {
     display: flex;
 }
 
-.info li{
+.infor li{
     margin-left: 160px;
     list-style: none;
     font-size: var(--tamaño-texto-fotter);
@@ -221,5 +223,3 @@ footer {
     height: 100px;
     font-family: "Open Sans", sans-serif;
 }
-
-/*FIN FOTTER REDES*/
