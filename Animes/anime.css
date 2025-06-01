@@ -1,0 +1,328 @@
+:root {
+    --color-fondo: #243642;
+    --color-banner: linear-gradient(to bottom, #070f2b 0%, #0c134f 100%);
+    --texto-banner: "Inter", sans-serif;
+    --tamaño-texto-banner: 16px;
+    --texto-titulo: "Noto Sans JP", sans-serif;
+    --tamaño-texto-fotter: 22px; 
+    --color-fondo-fotter: #231f20;
+    --Franhux-Movies: "Bebas Neue", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-fondo);
+}
+
+/*BANNER */
+.header {
+    background: var(--color-banner);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    padding: 5px 0px;
+    font-family: var(--texto-banner);
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 60px;
+    width: auto;
+    transition: all 0.3;
+    padding: 0px 40px;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+.header .nav-links {
+    list-style: none;
+    padding: 0 25px;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a {
+    font-size: var(--tamaño-texto-banner);
+    text-decoration: none;
+    color: white;
+}
+
+/*FIN BANNER*/
+
+
+/*IMAGENES CARRUSEL*/
+/* Reset y estilos base */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Contenedor del carrusel con altura definida */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Ajusta este valor según tus necesidades */
+    overflow: hidden;
+}
+
+/* Cada slide ocupa la totalidad del contenedor */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Slide activo (visible) */
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Imágenes responsivas que abarcan el contenedor */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slide.top-aligned img {
+    object-position: top;
+}
+
+/* Caja de información sobre la imagen */
+.info-box {
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    right: 20%;
+    /* Puedes modificar este valor para mover la caja horizontalmente */
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    max-width: 60%;
+    border-radius: 4px;
+}
+
+.info-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.info-box p.description {
+    margin: 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info-box .year,
+.info-box .genres {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+    .info-box {
+        left: 20px;
+        max-width: 200px;
+        padding: 10px;
+    }
+
+    .info-box h2 {
+        font-size: 1.2em;
+    }
+
+    .info-box p.description {
+        font-size: 0.9em;
+    }
+}
+
+/*FIN CARRUSEL*/
+
+/*TITULO*/
+.titulo{
+    margin-top: 70px;
+    margin-left: 70px;
+    padding-left: 30px;
+    padding-bottom: 7px;
+    font-family: var(--texto-titulo);
+    font-size: 40px;
+    color: white;
+    border-bottom: solid white;
+    width: 80%;
+}
+/*FIN TITULO*/
+
+
+/*TARJETAS*/
+.categoria {
+    margin-top: 50px;
+    margin-left: 110px;
+    width: 81.5%;
+    align-items: center;
+}
+
+.pr1, .pr2, .pr3, .pr4 {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    height: 361.625px;
+    margin-bottom: 30px;
+}
+
+.contenedor {
+    position: relative;
+    display: inline-block;
+}
+
+.accion, .aventura, .comedia, .drama, .terror, .ficcion, .animacion, .romance, .fantasia {
+    width: 302.531px;
+    height: 356px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.texto {
+    position: absolute;
+    bottom: 10px; /* Ajusta la posición del texto */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    padding: 5px;
+}
+
+main{
+    margin-bottom: 80px;
+}
+
+/*FIN TITULO GENEROS*/
+
+/*FOTTER REDES*/
+
+footer {
+    height: 250px;
+    margin: 0px;
+    display: flex;
+    background-color: var(--color-fondo-fotter);
+}
+
+.principal {
+    margin-top: 50px;
+    height: 195px;
+    width: 70%;
+}
+
+.imagen {
+    height: auto;
+    width: 30%;
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.bonito{
+    margin-top: 20px;
+    margin-left: 10%;
+    font-family: var(--Franhux-Movies);
+}
+
+.fran{
+    margin-left: 70px;
+}
+
+.redes {
+    height: 50px;
+    width: auto;
+    align-content: center;
+    margin-bottom: 15px;
+}
+
+.social {
+    margin-top: 2px;
+    display: flex;
+    list-style: none;
+    margin-left: 160px;
+}
+
+.facebook,.instagram:not(.twitter) {
+    margin-right: 45px;
+}
+
+.facebook, .instagram,.twitter {
+    border-radius: 50%;
+}
+
+.segundo {
+    height: 130px;
+    width: auto;
+    display: flex;
+}
+
+.info li{
+    margin-left: 160px;
+    list-style: none;
+    font-size: var(--tamaño-texto-fotter);
+    padding: 5px;
+    color: white;
+}
+
+.enlace-pie{
+    text-decoration: none;
+    color: white;
+}
+
+.enlace-pie:active{
+    color: white;
+}
+.termi li{
+    list-style: none;
+    font-size: var(--tamaño-texto-fotter);
+    padding: 5px;
+    color: white;
+}
+
+.izq {
+    width: 50%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.der {
+    width: 50%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*FIN FOTTER REDES*/

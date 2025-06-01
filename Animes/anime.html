@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franhux Movies-Animes</title>
+    <!-- link css-->
+    <link rel="stylesheet" href="anime.css">
+    <!--fin link css-->
+
+    <!--link fuente-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!--fin link fuente-->
+
+    <link rel="shortcut icon" href="/1 logo/FranhuxMovies.png" type="image/x-icon">
 </head>
 <body>
+      <!--BANNER-->
+  <header class="header">
+    <div class="logo">
+      <img src="../1 logo/FranhuxMovies.png" alt="logo de la marca">
+    </div>
+
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/Generos/generos.html" style="color: #a6a6a6;">Generos</a></li>
+        <li><a href="/Animes/anime.html">Animes</a></li>
+        <li><a href="/Mejores Peliculas/mejores.html">Mejores Peliculas</a></li>
+        <li><a href="/Proximos lanzamientos/lanzamientos.html">Proximos Lanzamientos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--FIN BANNER-->
+  <!--CARRUSEL IMAGANES-->
+
+  <div class="carousel">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <img src="imagen carrusel/dragon ball.jpg" alt="Imagen 1">
+      <div class="info-box">
+        <h2>Dragon Ball</h2>
+        <p class="description">
+          Sigue a Goku, un guerrero Saiyajin, en su camino para volverse más fuerte y proteger la Tierra de enemigos épicos...
+        </p>
+        <div class="year">1986</div>
+        <div class="genres">Acción, Aventura, Fantasía, Comedia, Fantasía</div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="slide top-aligned">
+      <img src="imagen carrusel/one piece.png" alt="Imagen 2">
+      <div class="info-box">
+        <h2>One piece</h2>
+        <p class="description">
+          sigue a Luffy, un joven con poderes de goma, en su viaje para encontrar el tesoro legendario y convertirse en el Rey de...
+        </p>
+        <div class="year">1999</div>
+        <div class="genres">Acción, Suspenso, Aventura, Fantasía, Comedia, Drama</div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="imagen carrusel/naruto.jpg" alt="Imagen 3">
+      <div class="info-box">
+        <h2>Kimetsu no Yaiba</h2>
+        <p class="description">
+          sigue a Tanjiro, un joven espadachín que lucha contra demonios para salvar a su hermana y vengar a su...
+        </p>
+        <div class="year">2019</div>
+        <div class="genres">Acción, Drama</div>
+      </div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="slide">
+      <img src="imagen carrusel/kimetsu.jpg" alt="Imagen 3">
+      <div class="info-box">
+        <h2>Kimetsu no Yaiba</h2>
+        <p class="description">
+          Tanjiro Kamado, un joven amable, lucha contra demonios tras que su familia sea asesinada y su hermana Nezuko se convierta en demonio. Busca una cura...
+        </p>
+        <div class="year">2019</div>
+        <div class="genres">Acción, Aventura, Drama, Comedia, Fantasía</div>
+      </div>
+    </div>
+        <!-- Slide 5 -->
+    <div class="slide">
+      <img src="imagen carrusel/bleach.jpg" alt="Imagen 3">
+      <div class="info-box">
+        <h2>Bleach</h2>
+        <p class="description">
+          Ichigo Kurosaki obtiene poderes de Soul Reaper para proteger a los vivos de espíritus malignos llamados Hollows y guiar las almas al más allá. Enfrenta...
+        </p>
+        <div class="year">2004</div>
+        <div class="genres">Acción, Aventura, Fantasía, Comedia</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Selecciona todos los slides
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Función para pasar al siguiente slide
+    function showNextSlide() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % totalSlides;
+      slides[currentIndex].classList.add('active');
+    }
+
+    // Cambio automático cada 5 segundos (5000 milisegundos)
+    setInterval(showNextSlide, 5000);
+  </script>
+  <!--FIN CARRUSEL-->
     
+  <!--TITULO-->
+    <h1 class="titulo">Nuestra mejor coleccion</h1>
+  <!--FIN TITULO-->
+
+  <!--TARJETAS-->
+  <main>
+    <div class="categoria">
+      <ul class="pr1">
+        <li class="contenedor"><a href="#"><img src="imagenes/dragonball.jpg"class="accion" alt="accion"><div class="texto">Dragon Ball</div></a></li>
+        <li class="contenedor"><a href="#"><img src="imagenes/one piece.jpg"class="aventura" alt="aventura"><div class="texto">One Piece</div></a></li>
+        <li class="contenedor"><a href="#"><img src="imagenes/naruto.jpg"class="comedia" alt="comedia"><div class="texto">Naruto</div></a></li>
+      </ul>
+      <ul class="pr2">
+        <li class="contenedor"><a href="#"><img src="imagenes/kuruko.jpg"class="drama" alt="drama"><div class="texto">Kuroko's Basketball</div></a></li>
+        <li class="contenedor"><a href="#"><img src="imagenes/kimetsu.jpg"class="terror" alt="terror"><div class="texto">Kimetsu no Yaiba: Demon Slayer</div></a></li>
+        <li class="contenedor"><a href="#"><img src="imagenes/blackclover.jpg"class="ficcion" alt="ficcion"><div class="texto">Black Clover</div></a></li>
+      </ul>
+      <ul class="pr3">
+        <li class="contenedor"><a href="#"><img src="imagenes/academia.jpg"class="animacion" alt="animacion"><div class="texto">My hero Academia</div></a></li>
+        <li class="contenedor"><a href="#"><img src="imagenes/titan.jpg"class="romance" alt="romance"><div class="texto">Attack on Titan</div></a></li>
+        <li class="contenedor"><a href="#"><img src="imagenes/jujutsu.jpg"class="fantasia" alt="fantasia"><div class="texto">Jujutsu Kaisen</div></a></li>
+      </ul>
+    </div>
+  </main>
+  <!--TARJETAS-->
+
+    <footer>
+    <div class="principal">
+      <div class="redes">
+        <ul class="social">
+          <li><img src="../Generos/logos redes/facebook.png" alt="facebook" width="40px" class="facebook"></li>
+          <li><img src="../Generos/logos redes/instagram.png" alt="instagram" width="40px" class="instagram"></li>
+          <li><img src="../Generos/logos redes/X.png" alt="X" width="40px" class="twitter"></li>
+        </ul>
+      </div>
+      <div class="segundo">
+        <div class="izq">
+          <ul class="info">
+            <li><a href="/pie pagina/sobre nosotros/nosotros.html" class="enlace-pie">Sobre Nosotros</a></li>
+            <li><a href="/pie pagina/compromiso/compromiso.html" class="enlace-pie">Nuestro Compromiso</a></li>
+            <li><a href="/pie pagina/privacidad/privacidad.html" class="enlace-pie">Privacidad</a></li>
+          </ul>
+        </div>
+        <div class="der">
+          <ul class="termi">
+            <li><a href="/pie pagina/terminos/terminos.html" class="enlace-pie">Terminos de uso</a></li>
+            <li><a href="/pie pagina/aliados/aliados.html" class="enlace-pie">Aliados (Crunchyroll y Netflix)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="imagen">
+      <div class="bonito">
+        <img src="../1 logo/FranhuxMovies.png" alt="logo FranhuxMovies" width="105px" class="fran">
+        <p><B>FRANHUX MOVIES</B></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
