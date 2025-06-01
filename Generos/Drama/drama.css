@@ -66,28 +66,24 @@ body {
 
 /*FIN BANNER*/
 
-
 /*TARJETAS Y TITULO*/
 .conten{
-    position: relative;
     margin-top: 60px;
-    left: 41%;
-    right: 41%;
+    position: relative;
+    left: 45%;
+    right: 45%;
     display: flex;
-    align-items: center;  
-    justify-content: center;
+    justify-content: center;  
     color: white;
     background: var(--color-banner);
-    width: 18%;
-    padding: 10px 1px; 
+    width: 10%;
 }
 
 .titu{
     text-align: center;
     align-content: center;
-    height: auto;
-    width: auto;
-    display: inline-block;
+    height: 50px;
+    width: 100px;
     font-family: var(--texto-titulo);
 }
 
@@ -139,8 +135,6 @@ body {
 main{
     margin-bottom: 5px;
 }
-/*FIN TARJETAS Y TITULO*/
-
 
 /*FOTTER REDES*/
 
@@ -239,5 +233,3 @@ footer {
 }
 
 /*FIN FOTTER REDES*/
-
-

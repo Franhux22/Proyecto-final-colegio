@@ -66,19 +66,18 @@ body {
 
 /*FIN BANNER*/
 
-
 /*TARJETAS Y TITULO*/
 .conten{
     position: relative;
     margin-top: 60px;
-    left: 41%;
-    right: 41%;
+    left: 45%;
+    right: 45%;
     display: flex;
     align-items: center;  
     justify-content: center;
     color: white;
     background: var(--color-banner);
-    width: 18%;
+    width: 10%;
     padding: 10px 1px; 
 }
 
@@ -140,7 +139,6 @@ main{
     margin-bottom: 5px;
 }
 /*FIN TARJETAS Y TITULO*/
-
 
 /*FOTTER REDES*/
 
@@ -239,5 +237,3 @@ footer {
 }
 
 /*FIN FOTTER REDES*/
-
-

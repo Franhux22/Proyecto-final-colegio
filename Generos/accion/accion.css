@@ -83,6 +83,7 @@ body {
     align-content: center;
     height: 50px;
     width: 100px;
+    font-family: var(--texto-titulo);
 }
 
 .categoria {
