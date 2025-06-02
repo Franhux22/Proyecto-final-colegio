@@ -60,8 +60,7 @@
               <a class="nav-link" href="Mejores Peliculas/mejores.html" style="color: white;">Mejores Peliculas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Proximos lanzamientos/lanzamientos.html" style="color: white;">Proximas
-                Peliculas</a>
+              <a class="nav-link" href="/Proximos lanzamientos/lanzamientos.html" style="color: white;">Proximos Lanzamientos </a>
             </li>
           </ul>
         </div>
@@ -138,8 +137,8 @@
     <div class="franqui">
       <ul>
         <li><a href="/imagenes franquicias/marvel/marvel.html"><img src="/imagenes franquicias/Marvel.jpeg" class="marvel"></a></li>
-        <li><a href=""><img src="/imagenes franquicias/starwars.jpg" class="star"></a></li>
-        <li><a href=""><img src="/imagenes franquicias/Jurassic-World.jpeg" class="park"></a></li>
+        <li><a href="/imagenes franquicias/starwars/starwars.html"><img src="/imagenes franquicias/starwars.jpg" class="star"></a></li>
+        <li><a href="/imagenes franquicias/park/park.html"><img src="/imagenes franquicias/Jurassic-World.jpeg" class="park"></a></li>
       </ul>
     </div>
   </section>
@@ -388,9 +387,9 @@
     <h2 style="color: white;" class="mx-4">Grandes Estudios</h2>
     <div class="franqui">
       <ul>
-        <li><a href=""><img src="grandes estudios/imagenes/disney.jpg" class="marvel"></a></li>
-        <li><a href=""><img src="grandes estudios/imagenes/pixar.jpg" class="star"></a></li>
-        <li><a href=""><img src="grandes estudios/imagenes/dreamworks.jpg" class="park"></a></li>
+        <li><a href="/grandes estudios/disney/disney.html"><img src="grandes estudios/imagenes/disney.jpg" class="marvel"></a></li>
+        <li><a href="/grandes estudios/pixar/pixar.html"><img src="grandes estudios/imagenes/pixar.jpg" class="star"></a></li>
+        <li><a href="/grandes estudios/dreamworks/dreamworks.html"><img src="grandes estudios/imagenes/dreamworks.jpg" class="park"></a></li>
       </ul>
     </div>
   </section>
@@ -669,186 +668,74 @@
 
   </body>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionar todos los contenedores de slider
-    const sliderContainers = document.querySelectorAll('.slider-container');
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener todos los sliders
+    const sliders = document.querySelectorAll('.slider-container');
     
-    sliderContainers.forEach((container, index) => {
-      const track = container.querySelector('.slider-track');
-      const wrapper = container.querySelector('.slider-wrapper');
-      const prevButton = container.querySelector('.prev-arrow');
-      const nextButton = container.querySelector('.next-arrow');
-      const originalCards = track.querySelectorAll('.movie-card:not(.clone)');
-      const allCards = track.querySelectorAll('.movie-card');
-    
-      // Función para obtener dimensiones responsivas
-      const getCardDimensions = () => {
-        const cardStyle = window.getComputedStyle(originalCards[0]);
-        const gap = parseInt(window.getComputedStyle(track).gap) || 15;
-        const cardWidth = originalCards[0].offsetWidth;
-        return { cardWidth, gap, cardWithGap: cardWidth + gap };
-      };
-    
-      // Número de cards visibles según el ancho del contenedor
-      const getVisibleCards = () => {
-        const { cardWithGap } = getCardDimensions();
-        const visibleCards = Math.floor(wrapper.offsetWidth / cardWithGap);
-        return Math.max(1, Math.min(visibleCards, 4)); // Máximo 4 cards por vez
-      };
-    
-      // Inicializar posición
-      const clonesBefore = 4;
-      let position = 0;
-      let isAnimating = false;
-    
-      const updatePosition = (newPosition, withTransition = true) => {
-        if (withTransition) {
-          track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-          isAnimating = true;
-          setTimeout(() => {
-            isAnimating = false;
-          }, 600);
-        } else {
-          track.style.transition = 'none';
-          isAnimating = false;
-        }
-        track.style.transform = `translateX(${newPosition}px)`;
-        position = newPosition;
-      };
-    
-      // Inicializar posición
-      const initializePosition = () => {
-        const { cardWithGap } = getCardDimensions();
-        const initialPosition = -clonesBefore * cardWithGap;
-        updatePosition(initialPosition, false);
-      };
-    
-      initializePosition();
-    
-      // Manejar el botón siguiente con animación suave
-      nextButton.addEventListener('click', () => {
-        if (isAnimating) return;
-    
-        const { cardWithGap } = getCardDimensions();
-        const visibleCards = getVisibleCards();
-        const newPosition = position - (cardWithGap * visibleCards);
-        updatePosition(newPosition);
-    
-        // Verificar si necesitamos saltar al inicio
-        const totalOriginalWidth = originalCards.length * cardWithGap;
-        const endThreshold = -((clonesBefore * cardWithGap) + totalOriginalWidth);
-    
-        if (newPosition <= endThreshold) {
-          setTimeout(() => {
-            const offset = newPosition - endThreshold;
-            const resetPosition = -clonesBefore * cardWithGap + offset;
-            updatePosition(resetPosition, false);
-          }, 600);
-        }
-      });
-    
-      // Manejar el botón anterior con animación suave
-      prevButton.addEventListener('click', () => {
-        if (isAnimating) return;
-    
-        const { cardWithGap } = getCardDimensions();
-        const visibleCards = getVisibleCards();
-        const newPosition = position + (cardWithGap * visibleCards);
-        updatePosition(newPosition);
-    
-        // Verificar si necesitamos saltar al final
-        const startThreshold = -(clonesBefore - 1) * cardWithGap;
-    
-        if (newPosition >= startThreshold) {
-          setTimeout(() => {
-            const totalOriginalWidth = originalCards.length * cardWithGap;
-            const offset = newPosition - startThreshold;
-            const resetPosition = -(clonesBefore * cardWithGap + totalOriginalWidth) + offset;
-            updatePosition(resetPosition, false);
-          }, 600);
-        }
-      });
-    
-      // Desplazamiento con mouse mejorado
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-      let hasMoved = false;
-    
-      wrapper.addEventListener('mousedown', (e) => {
-        if (isAnimating) return;
-        isDown = true;
-        hasMoved = false;
-        wrapper.style.cursor = 'grabbing';
-        startX = e.pageX - wrapper.offsetLeft;
-        scrollLeft = position;
-        e.preventDefault();
-      });
-    
-      wrapper.addEventListener('mouseleave', () => {
-        isDown = false;
-        wrapper.style.cursor = 'grab';
-      });
-    
-      wrapper.addEventListener('mouseup', () => {
-        isDown = false;
-        wrapper.style.cursor = 'grab';
-    
-        // Si se movió significativamente, aplicar snap
-        if (hasMoved) {
-          const { cardWithGap } = getCardDimensions();
-          const snapPosition = Math.round(position / cardWithGap) * cardWithGap;
-          updatePosition(snapPosition);
-        }
-      });
-    
-      wrapper.addEventListener('mousemove', (e) => {
-        if (!isDown || isAnimating) return;
-        e.preventDefault();
-        const x = e.pageX - wrapper.offsetLeft;
-        const walk = (x - startX);
-    
-        if (Math.abs(walk) > 5) {
-          hasMoved = true;
-        }
-    
-        updatePosition(scrollLeft + walk, false);
-      });
-    
-      // Ajustar el slider cuando cambia el tamaño de la ventana
-      let resizeTimeout;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          initializePosition();
-        }, 250);
-      });
-    
-      // Soporte para touch en dispositivos móviles
-      let touchStartX = 0;
-      let touchStartPosition = 0;
-    
-      wrapper.addEventListener('touchstart', (e) => {
-        if (isAnimating) return;
-        touchStartX = e.touches[0].clientX;
-        touchStartPosition = position;
-      }, { passive: true });
-    
-      wrapper.addEventListener('touchmove', (e) => {
-        if (isAnimating) return;
-        const touchX = e.touches[0].clientX;
-        const diff = touchX - touchStartX;
-        updatePosition(touchStartPosition + diff, false);
-      }, { passive: true });
-    
-      wrapper.addEventListener('touchend', () => {
-        if (isAnimating) return;
-        const { cardWithGap } = getCardDimensions();
-        const snapPosition = Math.round(position / cardWithGap) * cardWithGap;
-        updatePosition(snapPosition);
-      });
+    sliders.forEach(function(slider) {
+        const track = slider.querySelector('.slider-track');
+        const prevBtn = slider.querySelector('.prev-arrow');
+        const nextBtn = slider.querySelector('.next-arrow');
+        const cards = track.querySelectorAll('.movie-card:not(.clone)');
+        
+        let currentPosition = 0;
+        const cardWidth = 235; // 220px + 15px gap
+        const cardsToMove = 3; // Mover 3 cards a la vez
+        const maxPosition = -(cards.length - cardsToMove) * cardWidth;
+        
+        // Posición inicial (mostrar las cards clonadas del final)
+        track.style.transform = `translateX(-${cardWidth * 4}px)`;
+        currentPosition = -cardWidth * 4;
+        
+        // Botón siguiente
+        nextBtn.addEventListener('click', function() {
+            currentPosition -= cardWidth * cardsToMove;
+            
+            // Si llegamos al final, volver al inicio
+            if (currentPosition < maxPosition - (cardWidth * 4)) {
+                track.style.transition = 'transform 0.5s ease';
+                track.style.transform = `translateX(${currentPosition}px)`;
+                
+                setTimeout(function() {
+                    track.style.transition = 'none';
+                    currentPosition = -cardWidth * 4;
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    
+                    setTimeout(function() {
+                        track.style.transition = 'transform 0.5s ease';
+                    }, 50);
+                }, 500);
+            } else {
+                track.style.transition = 'transform 0.5s ease';
+                track.style.transform = `translateX(${currentPosition}px)`;
+            }
+        });
+        
+        // Botón anterior
+        prevBtn.addEventListener('click', function() {
+            currentPosition += cardWidth * cardsToMove;
+            
+            // Si llegamos al inicio, ir al final
+            if (currentPosition > -cardWidth) {
+                track.style.transition = 'transform 0.5s ease';
+                track.style.transform = `translateX(${currentPosition}px)`;
+                
+                setTimeout(function() {
+                    track.style.transition = 'none';
+                    currentPosition = maxPosition;
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    
+                    setTimeout(function() {
+                        track.style.transition = 'transform 0.5s ease';
+                    }, 50);
+                }, 500);
+            } else {
+                track.style.transition = 'transform 0.5s ease';
+                track.style.transform = `translateX(${currentPosition}px)`;
+            }
+        });
     });
-  });
+});
 </script>
 
 </html>

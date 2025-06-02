@@ -1,0 +1,243 @@
+:root {
+    --color-fondo: #243642;
+    --color-banner: linear-gradient(to bottom, #070f2b 0%, #0c134f 100%);
+    --texto-banner: "Inter", sans-serif;
+    --tamaño-texto-banner: 16px;
+    --texto-titulo: "Noto Sans JP", sans-serif;
+    --tamaño-texto-fotter: 22px; 
+    --color-fondo-fotter: #231f20;
+    --Franhux-Movies: "Roboto", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-fondo);
+}
+
+/*BANNER */
+.header {
+    background: var(--color-banner);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    padding: 5px 0px;
+    font-family: var(--texto-banner);
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 60px;
+    width: auto;
+    transition: all 0.3;
+    padding: 0px 40px;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+.header .nav-links {
+    list-style: none;
+    padding: 0 25px;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a {
+    font-size: var(--tamaño-texto-banner);
+    text-decoration: none;
+    color: white;
+}
+
+/*FIN BANNER*/
+
+
+/*TARJETAS Y TITULO*/
+.conten{
+    position: relative;
+    margin-top: 60px;
+    left: 45%;
+    right: 45%;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    color: white;
+    background: var(--color-banner);
+    width: 10%;
+    padding: 10px 1px; 
+}
+
+.titu{
+    text-align: center;
+    align-content: center;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    font-family: var(--texto-titulo);
+}
+
+.categoria {
+    margin-top: 50px;
+    margin-left: 110px;
+    width: 81.5%;
+    align-items: center;
+}
+
+.pr1, .pr2, .pr3 {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    height: 361.625px;
+    margin-bottom: 5px;
+}
+
+.contenedor {
+    position: relative;
+    display: inline-block;
+    height: 240.922px;
+    width: 193.359px;
+}
+
+.extration2, .vuelta, .john, .kong, .xxx, .geostorm, .bad, .greenland, .equipaje, .alerta, .simios, .nadie, .rampage, .trecientos, .agente{
+    width: 193.359px;
+    height: 240.922px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.nombre {
+      position: absolute;
+    bottom: 0; /* Esto posicionará el texto en la parte inferior de la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+}
+
+main{
+    margin-bottom: 5px;
+}
+/*FIN TARJETAS Y TITULO*/
+
+
+/*FOTTER REDES*/
+
+footer {
+    height: 250px;
+    margin: 0px;
+    display: flex;
+    background-color: var(--color-fondo-fotter);
+}
+
+.principal {
+    margin-top: 50px;
+    height: 195px;
+    width: 70%;
+}
+
+.imagen {
+    height: auto;
+    width: 30%;
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.bonito{
+    margin-top: 20px;
+    margin-left: 10%;
+    font-family: var(--Franhux-Movies);
+}
+
+.fran{
+    margin-left: 70px;
+}
+
+.redes {
+    height: 50px;
+    width: auto;
+    align-content: center;
+    margin-bottom: 15px;
+}
+
+.social {
+    margin-top: 2px;
+    display: flex;
+    list-style: none;
+    margin-left: 160px;
+}
+
+.facebook,.instagram:not(.twitter) {
+    margin-right: 45px;
+}
+
+.facebook, .instagram,.twitter {
+    border-radius: 50%;
+}
+
+.segundo {
+    height: 130px;
+    width: auto;
+    display: flex;
+}
+
+.info li{
+    margin-left: 160px;
+    list-style: none;
+    font-size: var(--tamaño-texto-fotter);
+    padding: 5px;
+    color: white;
+}
+
+.enlace-pie{
+    text-decoration: none;
+    color: white;
+}
+
+.enlace-pie:active{
+    color: white;
+}
+.termi li{
+    list-style: none;
+    font-size: var(--tamaño-texto-fotter);
+    padding: 5px;
+    color: white;
+}
+
+.izq {
+    width: 50%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.der {
+    width: 50%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*FIN FOTTER REDES*/
+
+
