@@ -15,7 +15,21 @@
 }
 
 body {
-    background: var(--color-fondo);
+  background: var(--color-fondo) url('imagenes/fondo.jpeg') no-repeat center/cover;
+  height: 600px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 678px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);  /* Cambia el nivel de opacidad aquí */
+  z-index: -1;  /* Asegura que se sitúe sobre la imagen de fondo */
+  pointer-events: none; /* Para que la superposición no interfiera con la interacción de otros elementos */
 }
 
 /*BANNER */
