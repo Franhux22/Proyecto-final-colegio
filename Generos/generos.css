@@ -64,6 +64,16 @@ body {
     color: white;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
 /*FIN BANNER*/
 
 /*TITULO GENEROS*/
@@ -223,3 +233,98 @@ footer {
 }
 
 /*FIN FOTTER REDES*/
+
+/* Add these media queries at the end of the file */
+@media screen and (max-width: 1024px) {
+    .categoria {
+        margin-left: 5%;
+        width: 90%;
+    }
+    
+    .pr1, .pr2, .pr3 {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .contenedor {
+        margin-bottom: 20px;
+    }
+
+    .titu {
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .header {
+        position: relative;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: var(--color-banner);
+        padding: 0;
+    }
+
+    .nav-links.show {
+        display: block;
+    }
+
+    .nav-links li {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .principal {
+        width: 100%;
+    }
+
+    .imagen {
+        display: none;
+    }
+
+    .social {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .info li {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    .termi li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .accion, .aventura, .comedia, .drama, .terror, .ficcion, .animacion, .romance, .fantasia {
+        width: 90%;
+        height: auto;
+    }
+
+    .contenedor {
+        width: 100%;
+        text-align: center;
+    }
+}

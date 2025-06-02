@@ -3,6 +3,10 @@
     --color-banner: linear-gradient(to bottom, #070f2b 0%, #0c134f 100%);
     --texto-banner: "Inter", sans-serif;
     --tamaño-texto-banner: 16px;
+    --texto-titulo: "Noto Sans JP", sans-serif;
+    --tamaño-texto-fotter: 22px; 
+    --color-fondo-fotter: #231f20;
+    --Franhux-Movies: "Bebas Neue", sans-serif;
 }
 
 * {
@@ -146,35 +150,483 @@ html {
 /*FIN CARRUSEL*/
 
 /*GRANDES FRANQUICIAS*/
-ul {
+.franqui{
+    margin-top: 55px;
+}
+ul{
     display: flex;
-    list-style-type: none;
-    justify-content: center;
-    justify-content: space-between;
+    list-style: none;
+    justify-content: center;   
+    justify-content: space-between; 
 }
 
-.marvel .img-marvel {
-    height: 134.984px;
-    width: 282.672px;
-    object-fit: cover;
-    border-radius: 17%;
+.marvel, .star, .park{
+    width: 290px;
+    height: 150px;
+    border-radius: 20%;
 }
-
-.jurassic .img-jurassic {
-    height: 134.984px;
-    width: 282.672px;
-    border-radius: 17%;
-}
-
-.star-wars .img-star{
-    height: 134.984px;
-    width: 282.672px;
-    border-radius: 17%;
+.park{
+    margin-right: 35px;
 }
 
 /*FIN GRANDES FRANQUICIAS*/
 
+/*TAQUILLERAS*/
+.contenido{
+    margin-top: 90px;
+    display: flex;
+    height: auto;
+    width: 25%;
+    background: var(--color-banner);
+    color: white;
+    padding: 5px 2px;
+    align-items: center;
 
-.taquillera {
-    margin-top: 25px;
 }
+
+.contenido-miedo{
+     margin-top: 90px;
+    display: flex;
+    height: auto;
+    width: 40%;
+    background: var(--color-banner);
+    color: white;
+    padding: 5px 2px;
+    align-items: center;
+}
+
+.contenido-secuela{
+    margin-top: 90px;
+    display: flex;
+    height: auto;
+    width: 28%;
+    background: var(--color-banner);
+    color: white;
+    padding: 5px 2px;
+    align-items: center;
+}
+
+.contenido-anime{
+    margin-top: 90px;
+    display: flex;
+    height: auto;
+    width: 18%;
+    background: var(--color-banner);
+    color: white;
+    padding: 5px 2px;
+    align-items: center;
+}
+
+.contenido-familia{
+    margin-top: 90px;
+    display: flex;
+    height: auto;
+    width: 30%;
+    background: var(--color-banner);
+    color: white;
+    padding: 5px 2px;
+    align-items: center;
+}
+
+.contenido-salida{
+    margin-top: 90px;
+    display: flex;
+    height: auto;
+    width: 27%;
+    background: var(--color-banner);
+    color: white;
+    padding: 5px 2px;
+    align-items: center;
+}
+
+.top-taqui {
+    padding-left: 25px;
+    display: flex; /* Mejor alineación */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 10px; /* Espacio entre flecha y texto */
+}
+
+.arrow-6 {
+    margin-left: 15px;
+    margin-top: 5px ;
+    display: inline-block;
+    position: relative;
+    width: 15px; 
+    height: 15px;
+    border: solid #338062;
+    border-width: 3px 3px 0 0;
+    transform: rotate(45deg);
+}
+
+
+.arrow-6:before, .arrow-6:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-width: 3px 3px 0 0;
+}
+
+.arrow-6:before {
+    border: 1px solid #055838;
+    border-width: 3px 3px 0 0;
+    top: 7px;
+    left: -10px;
+}
+
+.arrow-6:after {
+    border: 1px solid #7ba293;
+    border-width: 3px 3px 0 0;
+    top: -13px;
+    left: 10px;
+}
+/*FIN TAQUILLERAS*/
+
+/*CARRUSEL DE IMAGENES*/
+/*CARRUSEL DE IMAGENES*/
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    cursor: grab;
+    width: 100%;
+}
+
+.slider-wrapper:active {
+    cursor: grabbing;
+}
+
+.slider-track {
+    display: flex;
+    gap: 15px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.movie-card {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 330px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #1a1a1a;
+}
+
+.movie-card:hover {
+    transform: scale(1.08) translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.movie-card:hover img {
+    transform: scale(1.02);
+}
+
+/* Estilos para los botones de navegación */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 10;
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.95);
+    border-color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.slider-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+    transition: all 0.1s ease;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Estilos responsivos mejorados */
+@media (max-width: 1200px) {
+    .movie-card {
+        width: 200px;
+        height: 300px;
+    }
+    
+    .slider-container {
+        padding: 0 45px;
+    }
+}
+
+@media (max-width: 992px) {
+    .movie-card {
+        width: 180px;
+        height: 270px;
+    }
+    
+    .slider-track {
+        gap: 12px;
+    }
+    
+    .slider-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-card {
+        width: 160px;
+        height: 240px;
+    }
+    
+    .slider-track {
+        gap: 10px;
+    }
+    
+    .slider-container {
+        padding: 0 35px;
+    }
+    
+    .slider-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .movie-card {
+        width: 140px;
+        height: 210px;
+    }
+    
+    .slider-track {
+        gap: 8px;
+    }
+    
+    .slider-container {
+        padding: 0 30px;
+    }
+    
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card {
+        width: 120px;
+        height: 180px;
+    }
+    
+    .slider-track {
+        gap: 6px;
+    }
+    
+    .slider-container {
+        padding: 0 25px;
+    }
+    
+    .slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .prev-arrow {
+        left: 5px;
+    }
+    
+    .next-arrow {
+        right: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .movie-card {
+        width: 100px;
+        height: 150px;
+    }
+    
+    .slider-track {
+        gap: 5px;
+    }
+    
+    .slider-container {
+        padding: 0 20px;
+    }
+}
+/*FIN CARRUSEL DE IMAGENES*/
+.movie-card h3 {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los botones de navegación */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+/*FIN CARRUSEL DE IMAGENES*/
+
+/*FOTTER REDES*/
+
+footer {
+    height: 250px;
+    margin: 0px;
+    display: flex;
+    background-color: var(--color-fondo-fotter);
+}
+
+.principal {
+    margin-top: 50px;
+    height: 195px;
+    width: 70%;
+}
+
+.imagen {
+    height: auto;
+    width: 30%;
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.bonito{
+    margin-top: 20px;
+    margin-left: 10%;
+    font-family: var(--Franhux-Movies);
+}
+
+.fran{
+    margin-left: 70px;
+}
+
+.redes {
+    height: 50px;
+    width: auto;
+    align-content: center;
+    margin-bottom: 15px;
+}
+
+.social {
+    margin-top: 2px;
+    display: flex;
+    list-style: none;
+    margin-left: 160px;
+}
+
+.facebook,.instagram:not(.twitter) {
+    margin-right: 45px;
+}
+
+.facebook, .instagram,.twitter {
+    border-radius: 50%;
+}
+
+.segundo {
+    height: 130px;
+    width: auto;
+    display: flex;
+}
+
+.info li{
+    margin-left: 160px;
+    list-style: none;
+    font-size: var(--tamaño-texto-fotter);
+    padding: 5px;
+    color: white;
+}
+
+.enlace-pie{
+    text-decoration: none;
+    color: white;
+}
+
+.enlace-pie:active{
+    color: white;
+}
+.termi li{
+    list-style: none;
+    font-size: var(--tamaño-texto-fotter);
+    padding: 5px;
+    color: white;
+}
+
+.izq {
+    width: 50%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.der {
+    width: 50%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*FIN FOTTER REDES*/
